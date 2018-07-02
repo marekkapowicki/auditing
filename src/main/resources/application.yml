@@ -1,0 +1,17 @@
+logging.level.org.hibernate.*: DEBUG
+logging.level.org.hibernate.type: TRACE
+spring.h2.console.enabled: true
+spring:
+  jackson:
+    serialization:
+       WRITE_DATES_AS_TIMESTAMPS: false
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
