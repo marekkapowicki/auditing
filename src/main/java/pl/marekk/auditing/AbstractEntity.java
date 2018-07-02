@@ -1,13 +1,11 @@
 package pl.marekk.auditing;
 
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import java.time.LocalDateTime;
 import java.util.Objects;
 
 
@@ -19,16 +17,11 @@ public abstract class AbstractEntity {
     @GeneratedValue
     protected Long id;
 
-    @CreatedDate
-    private LocalDateTime creationTime;
 
     public Long getId() {
         return id;
     }
 
-    public LocalDateTime getCreationTime() {
-        return creationTime;
-    }
 
     @Override
     public boolean equals(Object o) {

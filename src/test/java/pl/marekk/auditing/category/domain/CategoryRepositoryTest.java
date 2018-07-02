@@ -56,6 +56,7 @@ public class CategoryRepositoryTest {
 
         assertThat(repository.findRevision(storedId, first.getRequiredRevisionNumber())).hasValueSatisfying(it -> {
             assertThat(it.getEntity().getName()).isEqualTo("old_category");
+            assertThat(it.getEntity().getCreationTime()).isNotNull();
         });
 
         assertThat(repository.findRevision(storedId, second.getRequiredRevisionNumber())).hasValueSatisfying(it -> {
